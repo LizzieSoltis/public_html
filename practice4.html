@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+                <title>Multiplication Table</title>
+
+</head>
+
+<body>
+
+                <main>
+
+                                <section>
+
+                                                <h2>Multiplication Table</h2>
+
+                                                <form method="post" action="practice4.php">
+
+                                                                <label for="number">Enter a number:</label>
+
+                                                                <input type="number" id="number" name="number" required>
+
+                                                                <button type="submit">Generate Table</button>
+
+                                                </form>
+
+                                                <?php if (isset($_POST['number'])): ?>
+
+                                                                <table>
+
+                                                                                <thead>
+
+                                                                                                <tr>
+
+                                                                                                                <th>X</th>
+
+                                                                                                                <?php for ($i = 1; $i <= $_POST['number']; $i++): ?>
+
+                                                                                                                                <th><?php echo $i; ?></th>
+
+                                                                                                                <?php endfor; ?>
+
+                                                                                                </tr>
+
+                                                                                </thead>
+
+                                                                                <tbody>
+
+                                                                                                <?php for ($i = 1; $i <= $_POST['number']; $i++): ?>
+
+                                                                                                                <tr>
+
+                                                                                                                                <th><?php echo $i; ?></th>
+
+                                                                                                                                <?php for ($j = 1; $j <= $_POST['number']; $j++): ?>
+
+                                                                                                                                                <td><?php echo $i * $j; ?></td>
+
+                                                                                                                                <?php endfor; ?>
+
+                                                                                                                </tr>
+
+                                                                                                <?php endfor; ?>
+
+                                                                                </tbody>
+
+                                                                </table>
+
+                                                <?php endif; ?>
+
+                                </section>
+
+                </main>
+
+</body>
+
+</html>
+
+ 
